@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSE Tracker — Suhried</title>
+  <style>
+    :root {
+      --bg:       #0f1117;
+      --surface:  #1a1d27;
+      --border:   #2a2d3a;
+      --text:     #e2e8f0;
+      --muted:    #8892a4;
+      --green:    #22c55e;
+      --red:      #ef4444;
+      --yellow:   #eab308;
+      --cyan:     #38bdf8;
+      --accent:   #6366f1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.5px;
+    }
+
+    #last-updated {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    main { padding: 12px; max-width: 680px; margin: 0 auto; }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 4px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 8px 0;
+      border: none;
+      border-radius: 7px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Summary card ── */
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .summary-item label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .summary-item .val {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    /* ── Stock rows ── */
+    .stock-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+    }
+
+    .stock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .stock-symbol {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--cyan);
+    }
+
+    .stock-price {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .stock-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .meta-item label {
+      font-size: 10px;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val { font-size: 13px; font-weight: 600; }
+
+    /* ── Mover rows ── */
+    .mover-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+    }
+
+    .mover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .mover-rank {
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 8px;
+    }
+
+    .mover-symbol { font-weight: 700; font-size: 15px; color: var(--cyan); }
+
+    .mover-badges { display: flex; gap: 6px; }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .badge.green { background: rgba(34,197,94,0.15); color: var(--green); }
+    .badge.red   { background: rgba(239,68,68,0.15);  color: var(--red);   }
+    .badge.muted { background: rgba(136,146,164,0.15); color: var(--muted); }
+
+    /* ── Sparkline bar ── */
+    .sparkline {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 32px;
+      margin-top: 8px;
+    }
+
+    .spark-bar {
+      flex: 1;
+      border-radius: 2px 2px 0 0;
+      min-height: 3px;
+      transition: opacity 0.2s;
+    }
+
+    .spark-label {
+      display: flex;
+      gap: 3px;
+      margin-top: 2px;
+    }
+
+    .spark-label span {
+      flex: 1;
+      font-size: 9px;
+      color: var(--muted);
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    /* ── Colours ── */
+    .green { color: var(--green); }
+    .red   { color: var(--red);   }
+    .yellow{ color: var(--yellow);}
+    .muted { color: var(--muted); }
+
+    /* ── Loading / Error ── */
+    .state-msg {
+      text-align: center;
+      padding: 48px 16px;
+      color: var(--muted);
+    }
+
+    .state-msg .icon { font-size: 36px; margin-bottom: 10px; }
+    .state-msg p { font-size: 14px; }
+
+    .spinner {
+      width: 28px; height: 28px;
+      border: 3px solid var(--border);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    /* market closed pill */
+    .closed-pill {
+      display: inline-block;
+      background: rgba(234,179,8,0.15);
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📈 DSE Tracker</h1>
+  <div id="last-updated">Loading…</div>
+</header>
+
+<main>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('portfolio')">Portfolio</button>
+    <button class="tab-btn" onclick="switchTab('gainers')">Gainers</button>
+    <button class="tab-btn" onclick="switchTab('losers')">Losers</button>
+  </div>
+
+  <div id="tab-portfolio" class="tab-panel active">
+    <div id="portfolio-content"><div class="state-msg"><div class="spinner"></div><p>Loading…</p></div></div>
+  </div>
+  <div id="tab-gainers" class="tab-panel">
+    <div id="gainers-content"><div class="state-msg"><div class="spinner"></div><p>Loading…</p></div></div>
+  </div>
+  <div id="tab-losers" class="tab-panel">
+    <div id="losers-content"><div class="state-msg"><div class="spinner"></div><p>Loading…</p></div></div>
+  </div>
+</main>
+
+<script>
+// ── Tab switching ──────────────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', ['portfolio','gainers','losers'][i] === name);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+// ── Formatting ─────────────────────────────────────────────────────────────
+const fmt = v => 'Tk ' + Number(v).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtPct = v => (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%';
+const cls = v => v > 0 ? 'green' : v < 0 ? 'red' : 'yellow';
+
+// ── Sparkline ──────────────────────────────────────────────────────────────
+function sparkline(dates, prices) {
+  if (!prices || prices.length === 0) return '';
+  const min = Math.min(...prices);
+  const max = Math.max(...prices);
+  const range = max - min || 1;
+  const bars = prices.map((p, i) => {
+    const h = Math.max(10, Math.round(((p - min) / range) * 28));
+    const isUp = i === 0 ? true : p >= prices[i - 1];
+    const col = isUp ? '#22c55e' : '#ef4444';
+    return `<div class="spark-bar" style="height:${h}px;background:${col};opacity:0.85"></div>`;
+  }).join('');
+  const labels = dates.map(d => `<span>${d}</span>`).join('');
+  return `<div class="sparkline">${bars}</div><div class="spark-label">${labels}</div>`;
+}
+
+// ── Portfolio ──────────────────────────────────────────────────────────────
+function renderPortfolio(data) {
+  const { stocks, summary } = data;
+  let html = '';
+
+  const anyMissing = stocks.some(s => s.ltp === null && s.close === null);
+  if (anyMissing) {
+    html += `<div class="closed-pill">⚠ Market may be closed — showing last close prices</div>`;
+  }
+
+  if (summary) {
+    const plCls = cls(summary.pl);
+    html += `
+      <div class="summary-card">
+        <div class="summary-item">
+          <label>Invested</label>
+          <div class="val">${fmt(summary.total_cost)}</div>
+        </div>
+        <div class="summary-item">
+          <label>Current Value</label>
+          <div class="val">${fmt(summary.total_value)}</div>
+        </div>
+        <div class="summary-item">
+          <label>P/L</label>
+          <div class="val ${plCls}">${summary.pl >= 0 ? '+' : ''}${fmt(summary.pl)}</div>
+        </div>
+        <div class="summary-item">
+          <label>Return</label>
+          <div class="val ${plCls}">${fmtPct(summary.return_pct)}</div>
+        </div>
+      </div>`;
+  }
+
+  html += `<div class="section-title">Holdings</div>`;
+
+  stocks.forEach(s => {
+    const price  = s.ltp ?? s.close;
+    const plCls  = s.pl !== null ? cls(s.pl) : 'muted';
+    const ltp    = s.ltp   !== null ? fmt(s.ltp)   : '—';
+    const close  = s.close !== null ? fmt(s.close) : '—';
+    const curVal = s.current_value !== null ? fmt(s.current_value) : '—';
+    const pl     = s.pl    !== null ? (s.pl >= 0 ? '+' : '') + fmt(s.pl) : '—';
+    const ret    = s.return_pct !== null ? fmtPct(s.return_pct) : '—';
+
+    html += `
+      <div class="stock-card">
+        <div class="stock-header">
+          <span class="stock-symbol">${s.symbol}</span>
+          <span class="stock-price">${price !== null ? fmt(price) : '—'}</span>
+        </div>
+        <div class="stock-meta">
+          <div class="meta-item"><label>Qty</label><div class="val">${s.quantity.toLocaleString()}</div></div>
+          <div class="meta-item"><label>Avg Cost</label><div class="val">${fmt(s.avg_cost)}</div></div>
+          <div class="meta-item"><label>Value</label><div class="val">${curVal}</div></div>
+          <div class="meta-item"><label>LTP</label><div class="val">${ltp}</div></div>
+          <div class="meta-item"><label>P/L</label><div class="val ${plCls}">${pl}</div></div>
+          <div class="meta-item"><label>Return</label><div class="val ${plCls}">${ret}</div></div>
+        </div>
+      </div>`;
+  });
+
+  document.getElementById('portfolio-content').innerHTML = html;
+}
+
+// ── Movers ─────────────────────────────────────────────────────────────────
+function renderMovers(rows, containerId, isLosers) {
+  if (!rows || rows.length === 0) {
+    document.getElementById(containerId).innerHTML =
+      `<div class="state-msg"><div class="icon">📭</div><p>No data available</p></div>`;
+    return;
+  }
+
+  let html = `<div class="section-title">${isLosers ? 'Top Losers' : 'Top Gainers'} — Last 7 Trading Days</div>`;
+
+  rows.forEach((r, i) => {
+    const todayCls  = cls(r.today_pct);
+    const sevenCls  = cls(r.seven_d_pct);
+    const todayBadge  = `<span class="badge ${r.today_pct  >= 0 ? 'green' : 'red'}">${fmtPct(r.today_pct)}</span>`;
+    const sevenBadge  = `<span class="badge ${r.seven_d_pct >= 0 ? 'green' : 'red'}">7d ${fmtPct(r.seven_d_pct)}</span>`;
+
+    html += `
+      <div class="mover-card">
+        <div class="mover-header">
+          <div>
+            <span class="mover-rank">#${i+1}</span>
+            <span class="mover-symbol">${r.symbol}</span>
+          </div>
+          <div class="mover-badges">${todayBadge}${sevenBadge}</div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">
+          Price: <strong style="color:var(--text)">${fmt(r.price)}</strong>
+        </div>
+        ${sparkline(r.dates, r.prices)}
+      </div>`;
+  });
+
+  document.getElementById(containerId).innerHTML = html;
+}
+
+// ── Fetch & render ─────────────────────────────────────────────────────────
+async function load() {
+  try {
+    const res  = await fetch('output.json?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    document.getElementById('last-updated').innerHTML =
+      `Updated<br>${data.generated_at_bd}`;
+
+    renderPortfolio(data.portfolio);
+    renderMovers(data.gainers, 'gainers-content', false);
+    renderMovers(data.losers,  'losers-content',  true);
+
+  } catch (err) {
+    const msg = `<div class="state-msg"><div class="icon">⚠️</div><p>${err.message}</p></div>`;
+    ['portfolio-content','gainers-content','losers-content'].forEach(id => {
+      document.getElementById(id).innerHTML = msg;
+    });
+    document.getElementById('last-updated').textContent = 'Failed to load';
+  }
+}
+
+load();
+// Auto-refresh every 5 minutes in case user keeps page open
+setInterval(load, 5 * 60 * 1000);
+</script>
+</body>
+</html>
