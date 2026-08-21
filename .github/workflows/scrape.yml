@@ -2,7 +2,11 @@ name: DSE Scraper
 
 on:
   schedule:
-    - cron: "0,30 * * * *"   # every 30 minutes
+    - cron: "15,30,45 4 * * 0,1,2,3,4"   # 10:15, 10:30, 10:45 BD (04:xx UTC)
+    - cron: "0,15,30,45 5 * * 0,1,2,3,4" # 11:00–11:45 BD (05:xx UTC)
+    - cron: "0,15,30,45 6 * * 0,1,2,3,4" # 12:00–12:45 BD (06:xx UTC)
+    - cron: "0,15,30,45 7 * * 0,1,2,3,4" # 01:00–01:45 BD (07:xx UTC)
+    - cron: "0 8 * * 0,1,2,3,4"          # 02:00 PM BD (08:00 UTC)
   workflow_dispatch:          # allow manual trigger from GitHub UI
 
 permissions:
