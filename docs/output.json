@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T08:03:08Z",
-  "generated_at_bd": "23 Aug 2026, 02:03 PM",
+  "generated_at": "2026-08-23T08:14:34Z",
+  "generated_at_bd": "23 Aug 2026, 02:14 PM",
   "portfolio": {
     "stocks": [
       {
@@ -194,30 +194,6 @@
         25.4,
         25.1,
         25.5
-      ]
-    },
-    {
-      "symbol": "REGENTTEX",
-      "price": 6.8,
-      "today_pct": 1.49,
-      "seven_d_pct": 0.0,
-      "dates": [
-        "13-Aug",
-        "16-Aug",
-        "17-Aug",
-        "18-Aug",
-        "19-Aug",
-        "20-Aug",
-        "23-Aug"
-      ],
-      "prices": [
-        6.8,
-        6.8,
-        6.4,
-        6.4,
-        6.9,
-        6.7,
-        6.8
       ]
     },
     {
@@ -434,6 +410,30 @@
         111.7,
         107.7,
         108.6
+      ]
+    },
+    {
+      "symbol": "SEMLFBSLGF",
+      "price": 6.9,
+      "today_pct": 2.99,
+      "seven_d_pct": -6.76,
+      "dates": [
+        "13-Aug",
+        "16-Aug",
+        "17-Aug",
+        "18-Aug",
+        "19-Aug",
+        "20-Aug",
+        "23-Aug"
+      ],
+      "prices": [
+        7.4,
+        7.5,
+        7.0,
+        6.9,
+        6.7,
+        6.7,
+        6.9
       ]
     },
     {
@@ -727,30 +727,6 @@
       ]
     },
     {
-      "symbol": "CLICL",
-      "price": 44.3,
-      "today_pct": -5.94,
-      "seven_d_pct": -10.3,
-      "dates": [
-        "13-Aug",
-        "16-Aug",
-        "17-Aug",
-        "18-Aug",
-        "19-Aug",
-        "20-Aug",
-        "23-Aug"
-      ],
-      "prices": [
-        50.5,
-        48.8,
-        49.1,
-        47.5,
-        47.4,
-        47.1,
-        45.3
-      ]
-    },
-    {
       "symbol": "NURANI",
       "price": 3.5,
       "today_pct": -7.89,
@@ -919,6 +895,30 @@
       ]
     },
     {
+      "symbol": "ZAHEENSPIN",
+      "price": 5.8,
+      "today_pct": -4.92,
+      "seven_d_pct": -3.33,
+      "dates": [
+        "13-Aug",
+        "16-Aug",
+        "17-Aug",
+        "18-Aug",
+        "19-Aug",
+        "20-Aug",
+        "23-Aug"
+      ],
+      "prices": [
+        6.0,
+        6.6,
+        6.2,
+        5.9,
+        5.9,
+        6.1,
+        5.8
+      ]
+    },
+    {
       "symbol": "FIRSTFIN",
       "price": 4.9,
       "today_pct": -5.77,
@@ -940,30 +940,6 @@
         5.2,
         5.2,
         5.0
-      ]
-    },
-    {
-      "symbol": "TECHNODRUG",
-      "price": 44.8,
-      "today_pct": -4.88,
-      "seven_d_pct": -0.22,
-      "dates": [
-        "13-Aug",
-        "16-Aug",
-        "17-Aug",
-        "18-Aug",
-        "19-Aug",
-        "20-Aug",
-        "23-Aug"
-      ],
-      "prices": [
-        45.2,
-        43.9,
-        43.6,
-        44.5,
-        44.8,
-        47.1,
-        45.1
       ]
     },
     {
@@ -1012,6 +988,30 @@
         231.5,
         227.0,
         216.4
+      ]
+    },
+    {
+      "symbol": "ALARABANK",
+      "price": 17.6,
+      "today_pct": -4.86,
+      "seven_d_pct": 10.0,
+      "dates": [
+        "13-Aug",
+        "16-Aug",
+        "17-Aug",
+        "18-Aug",
+        "19-Aug",
+        "20-Aug",
+        "23-Aug"
+      ],
+      "prices": [
+        16.0,
+        16.2,
+        16.1,
+        16.4,
+        17.3,
+        18.5,
+        17.6
       ]
     }
   ]
