@@ -35,7 +35,6 @@ except ImportError:
 PORTFOLIO = {
     "ACTIVEFINE": {"quantity": 14000, "total_cost": 98392.00},
     "ALLTEX":     {"quantity":  5000, "total_cost": 100436.14},
-    "APEXSPINN":  {"quantity":   500, "total_cost": 186744.00},
     "LEGACYFOOT": {"quantity":  2793, "total_cost": 214663.93},
 }
 
