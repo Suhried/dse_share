@@ -24,16 +24,6 @@
         "return_pct": 19.48
       },
       {
-        "symbol": "APEXSPINN",
-        "quantity": 500,
-        "avg_cost": 373.49,
-        "ltp": 322.6,
-        "close": 322.6,
-        "current_value": 161300.0,
-        "pl": -25444.0,
-        "return_pct": -13.63
-      },
-      {
         "symbol": "LEGACYFOOT",
         "quantity": 2793,
         "avg_cost": 76.86,
@@ -45,10 +35,10 @@
       }
     ],
     "summary": {
-      "total_cost": 600236.07,
-      "total_value": 568082.3,
-      "pl": -32153.77,
-      "return_pct": -5.36
+      "total_cost":  413492.07,
+      "total_value": 406782.3,
+      "pl":          -6709.77,
+      "return_pct":  -1.62
     }
   },
   "gainers": [
