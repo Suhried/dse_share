@@ -1,40 +1,45 @@
 {
-  "generated_at": "2026-09-09T08:57:23Z",
-  "generated_at_bd": "09 Sep 2026, 02:57 PM",
+  "generated_at": "2026-09-09T09:25:26Z",
+  "generated_at_bd": "09 Sep 2026, 03:25 PM",
   "portfolio": {
     "stocks": [
       {
         "symbol": "ACTIVEFINE",
         "quantity": 14000,
         "avg_cost": 7.03,
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 5.9,
+        "close": 5.7,
+        "current_value": 82600.0,
+        "pl": -15792.0,
+        "return_pct": -16.05
       },
       {
         "symbol": "ALLTEX",
         "quantity": 5000,
         "avg_cost": 20.09,
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 24.4,
+        "close": 24.3,
+        "current_value": 122000.0,
+        "pl": 21563.86,
+        "return_pct": 21.47
       },
       {
         "symbol": "LEGACYFOOT",
         "quantity": 2793,
         "avg_cost": 76.86,
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 72.2,
+        "close": 72.2,
+        "current_value": 201654.6,
+        "pl": -13009.33,
+        "return_pct": -6.06
       }
     ],
-    "summary": null
+    "summary": {
+      "total_cost": 413492.07,
+      "total_value": 406254.6,
+      "pl": -7237.47,
+      "return_pct": -1.75
+    }
   },
   "gainers": [
     {
