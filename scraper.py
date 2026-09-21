@@ -33,9 +33,26 @@ except ImportError:
 # Portfolio
 # ---------------------------------------------------------------------------
 PORTFOLIO = {
-    "ACTIVEFINE": {"quantity": 14000, "total_cost": 98392.00},
-    "ALLTEX":     {"quantity":  5000, "total_cost": 100436.14},
-    "LEGACYFOOT": {"quantity":  2793, "total_cost": 214663.93},
+    "ACTIVEFINE": {"quantity": 14000, "total_cost":  98_392.00},
+    "ALLTEX":     {"quantity":  5000, "total_cost": 100_436.14},
+    "LEGACYFOOT": {"quantity":  4013, "total_cost": 301_875.39},
+    "ICBIBANK":   {"quantity": 20000, "total_cost":  54_000.00},
+    "BEXIMCO":    {"quantity":   900, "total_cost":  20_250.00},
+}
+
+GRADE_MAP = {
+    "ACTIVEFINE": "Z",
+    "ALLTEX":     "Z",
+    "LEGACYFOOT": "B",
+    "ICBIBANK":   "Z",
+    "BEXIMCO":    "Z",
+}
+
+ACCOUNT = {
+    "deposit":           600_650.00,
+    "available_balance":  75_250.96,
+    "purchase_power":     75_250.96,
+    "equity":            567_893.46,
 }
 
 # ---------------------------------------------------------------------------
@@ -143,21 +160,18 @@ def get_stock_data(table, symbol):
 def build_portfolio_json():
     table = load_market_table()
     stocks = []
-    total_cost = 0.0
+    total_cost  = 0.0
     total_value = 0.0
     all_ok = True
 
     for sym, h in PORTFOLIO.items():
-        qty  = h["quantity"]
-        cost = h["total_cost"]
-        avg  = cost / qty
+        qty   = h["quantity"]
+        cost  = h["total_cost"]
+        avg   = cost / qty
+        grade = GRADE_MAP.get(sym, "-")
         total_cost += cost
 
-        data  = {}
-        ltp   = None
-        close = None
-        price = None
-
+        ltp = close = price = None
         if table is not None:
             data  = get_stock_data(table, sym)
             ltp   = data.get("ltp")
@@ -168,8 +182,9 @@ def build_portfolio_json():
             all_ok = False
             stocks.append({
                 "symbol": sym, "quantity": qty, "avg_cost": round(avg, 2),
-                "ltp": None, "close": None, "current_value": None,
-                "pl": None, "return_pct": None,
+                "grade": grade,
+                "ltp": None, "close": None,
+                "current_value": None, "pl": None, "return_pct": None,
             })
         else:
             cur_val = qty * price
@@ -178,10 +193,11 @@ def build_portfolio_json():
             total_value += cur_val
             stocks.append({
                 "symbol": sym, "quantity": qty, "avg_cost": round(avg, 2),
+                "grade": grade,
                 "ltp": ltp, "close": close,
                 "current_value": round(cur_val, 2),
-                "pl": round(pl, 2),
-                "return_pct": round(ret, 2),
+                "pl":            round(pl, 2),
+                "return_pct":    round(ret, 2),
             })
 
     summary = None
@@ -189,19 +205,23 @@ def build_portfolio_json():
         pl  = total_value - total_cost
         ret = pl / total_cost * 100
         summary = {
-            "total_cost":  round(total_cost, 2),
-            "total_value": round(total_value, 2),
-            "pl":          round(pl, 2),
-            "return_pct":  round(ret, 2),
+            "total_cost":   round(total_cost, 2),
+            "total_value":  round(total_value, 2),
+            "pl":           round(pl, 2),
+            "return_pct":   round(ret, 2),
         }
 
-    return {"stocks": stocks, "summary": summary}
+    return {
+        "stocks":  stocks,
+        "summary": summary,
+        "account": ACCOUNT,
+    }
 
 # ---------------------------------------------------------------------------
 # BullBD Top Movers
 # ---------------------------------------------------------------------------
-BULLBD_BASE     = "https://m.bullbd.com"
-REQUEST_TIMEOUT = 15
+BULLBD_BASE      = "https://m.bullbd.com"
+REQUEST_TIMEOUT  = 15
 MIN_TRADING_DAYS = 3
 
 def _get(url):
@@ -282,7 +302,6 @@ def build_movers_json(limit=20, losers=False):
     except Exception as e:
         print(f"Failed to fetch movers: {e}")
         return []
-
     result = []
     for m in movers:
         sym = m["symbol"]
@@ -294,12 +313,12 @@ def build_movers_json(limit=20, losers=False):
         dates, prices = history
         seven_d_ret = (prices[-1] - prices[0]) / prices[0] * 100 if len(prices) >= 2 else 0.0
         result.append({
-            "symbol":     sym,
-            "price":      m["ltp"] if m["ltp"] > 0 else prices[-1],
-            "today_pct":  round(m["change_pct"], 2),
+            "symbol":      sym,
+            "price":       m["ltp"] if m["ltp"] > 0 else prices[-1],
+            "today_pct":   round(m["change_pct"], 2),
             "seven_d_pct": round(seven_d_ret, 2),
-            "dates":      dates,
-            "prices":     prices,
+            "dates":       dates,
+            "prices":      prices,
         })
     result.sort(key=lambda r: r["seven_d_pct"], reverse=not losers)
     return result
@@ -308,8 +327,7 @@ def build_movers_json(limit=20, losers=False):
 # Main
 # ---------------------------------------------------------------------------
 def main():
-    now = dt.datetime.utcnow()
-    # Bangladesh is UTC+6
+    now    = dt.datetime.utcnow()
     bd_now = now + dt.timedelta(hours=6)
 
     print("Building portfolio data...")
