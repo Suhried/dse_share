@@ -107,39 +107,36 @@ def parse_price(v):
 
 # ---------------------------------------------------------------------------
 # DSE Market Table
+# old.dsebd.org confirmed working (Sep 2026) — dse.com.bd returned 410 Gone
 # ---------------------------------------------------------------------------
-def download_dse_prices():
-    url = "https://dse.com.bd/latest_share_price_scroll_l.php"
-    headers = {
-        "User-Agent": SESSION.headers["User-Agent"],
-        "Accept": "text/html,application/xhtml+xml",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer": "https://www.dse.com.bd/",
-    }
-    try:
-        req = Request(url, headers=headers, method="GET")
-        with urlopen(req, timeout=20, context=SSL_CTX) as resp:
-            return resp.read()
-    except Exception as e:
-        print(f"Could not connect to DSE: {e}")
-        return None
+_DSE_URLS = [
+    "https://old.dsebd.org/latest_share_price_scroll_l.php",
+    "https://old.dse.com.bd/latest_share_price_scroll_l.php",
+]
 
 def load_market_table():
-    raw = download_dse_prices()
-    if raw is None:
-        return None
-    html = raw.decode("utf-8", errors="ignore")
-    try:
-        tables = pd.read_html(StringIO(html))
-    except Exception as e:
-        print(f"Could not parse DSE HTML: {e}")
-        return None
-    for tbl in tables:
-        if tbl.empty:
-            continue
-        tbl.columns = [normalize_col(c) for c in tbl.columns]
-        if "TRADING CODE" in tbl.columns:
-            return tbl
+    headers = {
+        "User-Agent":      SESSION.headers["User-Agent"],
+        "Accept":          "text/html,application/xhtml+xml",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer":         "https://old.dsebd.org/",
+    }
+    for url in _DSE_URLS:
+        try:
+            req = Request(url, headers=headers, method="GET")
+            with urlopen(req, timeout=20, context=SSL_CTX) as resp:
+                html = resp.read().decode("utf-8", errors="ignore")
+            tables = pd.read_html(StringIO(html))
+            for tbl in tables:
+                if tbl.empty:
+                    continue
+                tbl.columns = [normalize_col(c) for c in tbl.columns]
+                if "TRADING CODE" in tbl.columns:
+                    print(f"✓ DSE prices loaded from {url.split('/')[2]}")
+                    return tbl
+        except Exception as e:
+            print(f"  {url.split('/')[2]}: {e}")
+    print("Could not load DSE price table from any source.")
     return None
 
 def get_stock_data(table, symbol):
@@ -149,10 +146,10 @@ def get_stock_data(table, symbol):
     if matches.empty:
         return {}
     row = matches.iloc[0]
-    return {
-        "ltp":   parse_price(row.get("LTP*")),
-        "close": parse_price(row.get("CLOSEP*")),
-    }
+    # old.dsebd.org uses LTP* and CLOSEP* column names
+    ltp   = parse_price(row.get("LTP*")    or row.get("LTP"))
+    close = parse_price(row.get("CLOSEP*") or row.get("CLOSEP") or row.get("CLOSE"))
+    return {"ltp": ltp, "close": close}
 
 # ---------------------------------------------------------------------------
 # Portfolio JSON
