@@ -34,25 +34,23 @@ except ImportError:
 # ---------------------------------------------------------------------------
 PORTFOLIO = {
     "ACTIVEFINE": {"quantity": 14000, "total_cost":  98_392.00},
-    "ALLTEX":     {"quantity":  5000, "total_cost": 100_436.14},
-    "LEGACYFOOT": {"quantity":  4013, "total_cost": 301_875.39},
-    "ICBIBANK":   {"quantity": 20000, "total_cost":  54_000.00},
-    "BEXIMCO":    {"quantity":   900, "total_cost":  20_250.00},
+    "ALLTEX":     {"quantity":  2500, "total_cost":  50_218.07},
+    "LEGACYFOOT": {"quantity":  7293, "total_cost": 519_014.49},
+    "BEXIMCO":    {"quantity":   900, "total_cost":  20_331.00},
 }
 
 GRADE_MAP = {
     "ACTIVEFINE": "Z",
     "ALLTEX":     "Z",
     "LEGACYFOOT": "B",
-    "ICBIBANK":   "Z",
-    "BEXIMCO":    "Z",
+    "BEXIMCO":    "B",
 }
 
 ACCOUNT = {
-    "deposit":           600_650.00,
-    "available_balance":  75_250.96,
-    "purchase_power":     75_250.96,
-    "equity":            567_893.46,
+    "deposit":           700_650.00,
+    "available_balance":     594.87,
+    "purchase_power":        594.87,
+    "equity":            638_002.87,
 }
 
 # ---------------------------------------------------------------------------
