@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-04T12:05:45Z",
-  "generated_at_bd": "04 Nov 2026, 06:05 PM",
+  "generated_at": "2026-11-04T12:48:10Z",
+  "generated_at_bd": "04 Nov 2026, 06:48 PM",
   "portfolio": {
     "stocks": [
       {
@@ -8,47 +8,52 @@
         "quantity": 14000,
         "avg_cost": 7.03,
         "grade": "Z",
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 4.5,
+        "close": 4.5,
+        "current_value": 63000.0,
+        "pl": -35392.0,
+        "return_pct": -35.97
       },
       {
         "symbol": "ALLTEX",
         "quantity": 2500,
         "avg_cost": 20.09,
         "grade": "Z",
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 27.5,
+        "close": 27.5,
+        "current_value": 68750.0,
+        "pl": 18531.93,
+        "return_pct": 36.9
       },
       {
         "symbol": "LEGACYFOOT",
         "quantity": 7293,
         "avg_cost": 71.17,
         "grade": "B",
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 61.4,
+        "close": 61.4,
+        "current_value": 447790.2,
+        "pl": -71224.29,
+        "return_pct": -13.72
       },
       {
         "symbol": "BEXIMCO",
         "quantity": 900,
         "avg_cost": 22.59,
         "grade": "B",
-        "ltp": null,
-        "close": null,
-        "current_value": null,
-        "pl": null,
-        "return_pct": null
+        "ltp": 19.9,
+        "close": 19.9,
+        "current_value": 17910.0,
+        "pl": -2421.0,
+        "return_pct": -11.91
       }
     ],
-    "summary": null,
+    "summary": {
+      "total_cost": 687955.56,
+      "total_value": 597450.2,
+      "pl": -90505.36,
+      "return_pct": -13.16
+    },
     "account": {
       "deposit": 700650.0,
       "available_balance": 594.87,
