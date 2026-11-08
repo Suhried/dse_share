@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-08T04:15:31Z",
-  "generated_at_bd": "08 Nov 2026, 10:15 AM",
+  "generated_at": "2026-11-08T04:30:31Z",
+  "generated_at_bd": "08 Nov 2026, 10:30 AM",
   "portfolio": {
     "stocks": [
       {
@@ -19,40 +19,40 @@
         "quantity": 2500,
         "avg_cost": 20.09,
         "grade": "Z",
-        "ltp": 28.6,
+        "ltp": 28.4,
         "close": null,
-        "current_value": 71500.0,
-        "pl": 21281.93,
-        "return_pct": 42.38
+        "current_value": 71000.0,
+        "pl": 20781.93,
+        "return_pct": 41.38
       },
       {
         "symbol": "LEGACYFOOT",
         "quantity": 7293,
         "avg_cost": 71.17,
         "grade": "B",
-        "ltp": 63.0,
+        "ltp": 62.7,
         "close": null,
-        "current_value": 459459.0,
-        "pl": -59555.49,
-        "return_pct": -11.47
+        "current_value": 457271.1,
+        "pl": -61743.39,
+        "return_pct": -11.9
       },
       {
         "symbol": "BEXIMCO",
         "quantity": 900,
         "avg_cost": 22.59,
         "grade": "B",
-        "ltp": 19.8,
+        "ltp": 19.7,
         "close": null,
-        "current_value": 17820.0,
-        "pl": -2511.0,
-        "return_pct": -12.35
+        "current_value": 17730.0,
+        "pl": -2601.0,
+        "return_pct": -12.79
       }
     ],
     "summary": {
       "total_cost": 687955.56,
-      "total_value": 613179.0,
-      "pl": -74776.56,
-      "return_pct": -10.87
+      "total_value": 610401.1,
+      "pl": -77554.46,
+      "return_pct": -11.27
     },
     "account": {
       "deposit": 700650.0,
@@ -63,34 +63,10 @@
   },
   "gainers": [
     {
-      "symbol": "MATINSPINN",
-      "price": 110.0,
-      "today_pct": 4.36,
-      "seven_d_pct": 30.7,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        83.4,
-        91.6,
-        97.2,
-        105.9,
-        107.2,
-        105.4,
-        109.0
-      ]
-    },
-    {
       "symbol": "PRIMETEX",
-      "price": 16.6,
-      "today_pct": 5.73,
-      "seven_d_pct": 22.96,
+      "price": 16.3,
+      "today_pct": 3.82,
+      "seven_d_pct": 20.74,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -107,14 +83,14 @@
         16.0,
         16.1,
         15.7,
-        16.6
+        16.3
       ]
     },
     {
       "symbol": "ZAHEENSPIN",
-      "price": 5.1,
-      "today_pct": 6.25,
-      "seven_d_pct": 15.91,
+      "price": 5.2,
+      "today_pct": 8.33,
+      "seven_d_pct": 18.18,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -131,14 +107,14 @@
         4.4,
         4.4,
         4.8,
-        5.1
+        5.2
       ]
     },
     {
       "symbol": "PURABIGEN",
-      "price": 33.1,
-      "today_pct": 3.44,
-      "seven_d_pct": 14.53,
+      "price": 33.7,
+      "today_pct": 5.31,
+      "seven_d_pct": 16.61,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -155,14 +131,14 @@
         28.9,
         31.4,
         32.0,
-        33.1
+        33.7
       ]
     },
     {
-      "symbol": "DESCO",
-      "price": 25.0,
-      "today_pct": 3.73,
-      "seven_d_pct": 13.12,
+      "symbol": "HRTEX",
+      "price": 16.9,
+      "today_pct": 4.32,
+      "seven_d_pct": 11.18,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -173,20 +149,20 @@
         "08-Nov"
       ],
       "prices": [
-        22.1,
-        22.5,
-        22.1,
-        22.5,
-        23.2,
-        24.1,
-        25.0
+        15.2,
+        15.0,
+        15.9,
+        15.6,
+        15.6,
+        16.2,
+        16.9
       ]
     },
     {
       "symbol": "REGENTTEX",
-      "price": 5.4,
-      "today_pct": 5.88,
-      "seven_d_pct": 12.5,
+      "price": 5.3,
+      "today_pct": 3.92,
+      "seven_d_pct": 10.42,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -203,14 +179,14 @@
         5.0,
         5.1,
         5.1,
-        5.4
+        5.3
       ]
     },
     {
-      "symbol": "PDL",
-      "price": 5.4,
-      "today_pct": 3.85,
-      "seven_d_pct": 12.5,
+      "symbol": "FAMILYTEX",
+      "price": 2.2,
+      "today_pct": 4.76,
+      "seven_d_pct": 10.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -221,61 +197,13 @@
         "08-Nov"
       ],
       "prices": [
-        4.8,
-        4.8,
-        4.9,
-        4.9,
-        5.3,
-        5.2,
-        5.4
-      ]
-    },
-    {
-      "symbol": "OAL",
-      "price": 5.8,
-      "today_pct": 5.45,
-      "seven_d_pct": 11.54,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        5.2,
-        5.4,
-        5.2,
-        5.2,
-        5.3,
-        5.5,
-        5.8
-      ]
-    },
-    {
-      "symbol": "MONOSPOOL",
-      "price": 107.8,
-      "today_pct": 3.55,
-      "seven_d_pct": 6.75,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        100.7,
-        99.5,
-        97.0,
-        94.8,
-        97.1,
-        104.1,
-        107.5
+        2.0,
+        2.0,
+        1.9,
+        1.9,
+        2.0,
+        2.1,
+        2.2
       ]
     },
     {
@@ -351,10 +279,10 @@
       ]
     },
     {
-      "symbol": "STYLECRAFT",
-      "price": 51.0,
-      "today_pct": 4.72,
-      "seven_d_pct": 3.83,
+      "symbol": "ICBIBANK",
+      "price": 2.6,
+      "today_pct": 4.0,
+      "seven_d_pct": 4.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -365,13 +293,37 @@
         "08-Nov"
       ],
       "prices": [
-        49.6,
-        47.8,
-        49.3,
-        48.9,
-        49.5,
-        48.7,
-        51.5
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.6
+      ]
+    },
+    {
+      "symbol": "STANCERAM",
+      "price": 62.9,
+      "today_pct": 7.71,
+      "seven_d_pct": 3.11,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        61.0,
+        63.0,
+        60.0,
+        61.3,
+        61.4,
+        58.4,
+        62.9
       ]
     },
     {
@@ -399,10 +351,10 @@
       ]
     },
     {
-      "symbol": "NCCBLMF1",
-      "price": 5.8,
-      "today_pct": 3.57,
-      "seven_d_pct": 1.75,
+      "symbol": "RUPALIBANK",
+      "price": 15.9,
+      "today_pct": 3.92,
+      "seven_d_pct": 1.92,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -413,13 +365,37 @@
         "08-Nov"
       ],
       "prices": [
-        5.7,
-        5.9,
-        5.7,
-        5.5,
-        5.7,
-        5.6,
-        5.8
+        15.6,
+        15.6,
+        15.3,
+        15.3,
+        15.4,
+        15.3,
+        15.9
+      ]
+    },
+    {
+      "symbol": "STYLECRAFT",
+      "price": 50.3,
+      "today_pct": 3.29,
+      "seven_d_pct": 1.41,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        49.6,
+        47.8,
+        49.3,
+        48.9,
+        49.5,
+        48.7,
+        50.3
       ]
     },
     {
@@ -471,31 +447,7 @@
       ]
     },
     {
-      "symbol": "STANDBANKL",
-      "price": 4.1,
-      "today_pct": 5.13,
-      "seven_d_pct": 0.0,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        4.0,
-        4.0,
-        3.9,
-        4.0,
-        3.9,
-        3.9,
-        4.0
-      ]
-    },
-    {
-      "symbol": "PRIMEFIN",
+      "symbol": "NURANI",
       "price": 2.8,
       "today_pct": 3.7,
       "seven_d_pct": 0.0,
@@ -509,13 +461,13 @@
         "08-Nov"
       ],
       "prices": [
-        2.8,
-        2.9,
-        2.9,
-        2.8,
-        2.8,
         2.7,
-        2.8
+        2.6,
+        2.6,
+        2.5,
+        2.5,
+        2.7,
+        2.7
       ]
     },
     {
@@ -541,14 +493,62 @@
         10.0,
         10.4
       ]
+    },
+    {
+      "symbol": "PF1STMF",
+      "price": 11.5,
+      "today_pct": 3.6,
+      "seven_d_pct": -2.56,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        11.7,
+        12.8,
+        12.2,
+        11.8,
+        11.9,
+        11.1,
+        11.4
+      ]
+    },
+    {
+      "symbol": "PRIME1ICBA",
+      "price": 6.2,
+      "today_pct": 3.33,
+      "seven_d_pct": -7.46,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        6.7,
+        6.8,
+        6.5,
+        6.3,
+        6.2,
+        6.0,
+        6.2
+      ]
     }
   ],
   "losers": [
     {
       "symbol": "EASTRNLUB",
-      "price": 1572.0,
-      "today_pct": -2.78,
-      "seven_d_pct": -21.93,
+      "price": 1565.5,
+      "today_pct": -3.18,
+      "seven_d_pct": -22.25,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -565,7 +565,7 @@
         1934.2,
         1929.1,
         1617.0,
-        1572.0
+        1565.5
       ]
     },
     {
@@ -594,9 +594,9 @@
     },
     {
       "symbol": "GOLDENSON",
-      "price": 9.6,
-      "today_pct": -3.03,
-      "seven_d_pct": -4.0,
+      "price": 9.4,
+      "today_pct": -5.05,
+      "seven_d_pct": -6.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -613,14 +613,62 @@
         9.8,
         9.8,
         9.9,
-        9.6
+        9.4
+      ]
+    },
+    {
+      "symbol": "APEXSPINN",
+      "price": 393.5,
+      "today_pct": -2.57,
+      "seven_d_pct": -5.16,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        414.9,
+        415.5,
+        416.8,
+        406.0,
+        406.1,
+        403.9,
+        393.5
+      ]
+    },
+    {
+      "symbol": "ISLAMICFIN",
+      "price": 9.2,
+      "today_pct": -2.13,
+      "seven_d_pct": -5.15,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        9.7,
+        9.4,
+        9.3,
+        9.0,
+        9.0,
+        9.4,
+        9.2
       ]
     },
     {
       "symbol": "ISNLTD",
-      "price": 39.0,
-      "today_pct": -1.76,
-      "seven_d_pct": -3.23,
+      "price": 38.7,
+      "today_pct": -2.52,
+      "seven_d_pct": -3.97,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -637,38 +685,14 @@
         37.4,
         37.9,
         39.7,
-        39.0
-      ]
-    },
-    {
-      "symbol": "RANFOUNDRY",
-      "price": 143.2,
-      "today_pct": -2.39,
-      "seven_d_pct": -2.59,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        147.0,
-        145.8,
-        143.2,
-        142.9,
-        144.4,
-        146.7,
-        143.2
+        38.7
       ]
     },
     {
       "symbol": "GREENDELT",
-      "price": 60.6,
-      "today_pct": -2.26,
-      "seven_d_pct": -2.57,
+      "price": 60.1,
+      "today_pct": -3.06,
+      "seven_d_pct": -3.38,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -685,14 +709,14 @@
         60.9,
         60.7,
         62.0,
-        60.6
+        60.1
       ]
     },
     {
-      "symbol": "INDEXAGRO",
-      "price": 63.8,
-      "today_pct": -1.39,
-      "seven_d_pct": -1.85,
+      "symbol": "FBFIF",
+      "price": 3.1,
+      "today_pct": -3.13,
+      "seven_d_pct": -3.13,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -703,20 +727,20 @@
         "08-Nov"
       ],
       "prices": [
-        65.0,
-        63.0,
-        62.2,
-        61.9,
-        63.0,
-        64.7,
-        63.8
+        3.2,
+        3.2,
+        3.2,
+        3.2,
+        3.2,
+        3.2,
+        3.1
       ]
     },
     {
-      "symbol": "SEAPEARL",
-      "price": 32.4,
-      "today_pct": -2.11,
-      "seven_d_pct": -1.52,
+      "symbol": "BNIPLC",
+      "price": 154.0,
+      "today_pct": -2.84,
+      "seven_d_pct": -2.65,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -727,61 +751,13 @@
         "08-Nov"
       ],
       "prices": [
-        32.9,
-        32.3,
-        32.4,
-        32.1,
-        32.6,
-        33.1,
-        32.4
-      ]
-    },
-    {
-      "symbol": "SBACBANK",
-      "price": 6.5,
-      "today_pct": -1.52,
-      "seven_d_pct": -1.52,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        6.6,
-        6.8,
-        6.7,
-        6.6,
-        6.6,
-        6.6,
-        6.5
-      ]
-    },
-    {
-      "symbol": "BESTHLDNG",
-      "price": 13.1,
-      "today_pct": -1.5,
-      "seven_d_pct": -1.5,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        13.3,
-        12.9,
-        12.9,
-        12.8,
-        13.0,
-        13.3,
-        13.1
+        158.2,
+        153.8,
+        154.2,
+        144.6,
+        148.2,
+        158.5,
+        154.0
       ]
     },
     {
@@ -809,33 +785,9 @@
       ]
     },
     {
-      "symbol": "AAMRATECH",
-      "price": 15.5,
-      "today_pct": -4.91,
-      "seven_d_pct": -1.27,
-      "dates": [
-        "29-Oct",
-        "01-Nov",
-        "02-Nov",
-        "03-Nov",
-        "04-Nov",
-        "05-Nov",
-        "08-Nov"
-      ],
-      "prices": [
-        15.7,
-        15.3,
-        15.3,
-        15.4,
-        16.9,
-        16.3,
-        15.5
-      ]
-    },
-    {
       "symbol": "SIMTEX",
-      "price": 24.2,
-      "today_pct": -2.81,
+      "price": 24.3,
+      "today_pct": -2.41,
       "seven_d_pct": -1.22,
       "dates": [
         "28-Oct",
@@ -857,10 +809,10 @@
       ]
     },
     {
-      "symbol": "HAMI",
-      "price": 140.0,
-      "today_pct": -2.1,
-      "seven_d_pct": 0.29,
+      "symbol": "SEAPEARL",
+      "price": 32.4,
+      "today_pct": -2.11,
+      "seven_d_pct": -1.22,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -871,20 +823,20 @@
         "08-Nov"
       ],
       "prices": [
-        139.6,
-        140.7,
-        140.4,
-        136.2,
-        139.6,
-        143.0,
-        140.0
+        32.9,
+        32.3,
+        32.4,
+        32.1,
+        32.6,
+        33.1,
+        32.5
       ]
     },
     {
       "symbol": "BGIC",
-      "price": 39.5,
-      "today_pct": -2.95,
-      "seven_d_pct": 1.02,
+      "price": 39.1,
+      "today_pct": -3.93,
+      "seven_d_pct": 0.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -901,14 +853,14 @@
         39.0,
         39.3,
         40.7,
-        39.5
+        39.1
       ]
     },
     {
-      "symbol": "SAIFPOWER",
-      "price": 6.5,
-      "today_pct": -1.52,
-      "seven_d_pct": 1.54,
+      "symbol": "RINGSHINE",
+      "price": 3.4,
+      "today_pct": -2.86,
+      "seven_d_pct": 0.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -919,20 +871,20 @@
         "08-Nov"
       ],
       "prices": [
-        6.5,
-        6.5,
-        6.5,
-        6.3,
-        6.5,
-        6.6,
-        6.6
+        3.4,
+        3.4,
+        3.3,
+        3.3,
+        3.3,
+        3.5,
+        3.4
       ]
     },
     {
-      "symbol": "PROVATIINS",
-      "price": 60.4,
-      "today_pct": -1.15,
-      "seven_d_pct": 4.32,
+      "symbol": "BBS",
+      "price": 8.8,
+      "today_pct": -2.22,
+      "seven_d_pct": 0.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -943,20 +895,20 @@
         "08-Nov"
       ],
       "prices": [
-        57.9,
-        59.1,
-        57.1,
-        58.0,
-        59.5,
-        61.1,
-        60.4
+        8.8,
+        8.6,
+        8.4,
+        8.5,
+        8.9,
+        9.0,
+        8.8
       ]
     },
     {
-      "symbol": "RDFOOD",
-      "price": 21.8,
-      "today_pct": -1.36,
-      "seven_d_pct": 4.81,
+      "symbol": "SILCOPHL",
+      "price": 14.8,
+      "today_pct": -1.99,
+      "seven_d_pct": 0.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -967,20 +919,20 @@
         "08-Nov"
       ],
       "prices": [
-        20.8,
-        20.8,
-        21.3,
-        21.1,
-        22.1,
-        22.1,
-        21.8
+        14.8,
+        14.5,
+        14.9,
+        14.7,
+        15.1,
+        15.1,
+        14.8
       ]
     },
     {
-      "symbol": "BDAUTOCA",
-      "price": 181.5,
-      "today_pct": -1.31,
-      "seven_d_pct": 10.74,
+      "symbol": "APEXTANRY",
+      "price": 71.6,
+      "today_pct": -1.92,
+      "seven_d_pct": 0.0,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -991,20 +943,20 @@
         "08-Nov"
       ],
       "prices": [
-        163.9,
-        165.8,
-        170.3,
-        176.2,
-        182.0,
-        183.9,
-        181.5
+        71.6,
+        70.5,
+        70.5,
+        69.6,
+        70.6,
+        73.0,
+        71.6
       ]
     },
     {
-      "symbol": "OIMEX",
-      "price": 15.4,
-      "today_pct": -1.28,
-      "seven_d_pct": 20.31,
+      "symbol": "TOSRIFA",
+      "price": 17.6,
+      "today_pct": -2.76,
+      "seven_d_pct": 0.57,
       "dates": [
         "29-Oct",
         "01-Nov",
@@ -1015,13 +967,61 @@
         "08-Nov"
       ],
       "prices": [
-        12.8,
-        12.8,
-        13.4,
-        15.0,
-        15.5,
-        15.6,
-        15.4
+        17.5,
+        18.1,
+        19.3,
+        18.6,
+        18.4,
+        18.1,
+        17.6
+      ]
+    },
+    {
+      "symbol": "PENINSULA",
+      "price": 17.0,
+      "today_pct": -2.86,
+      "seven_d_pct": 2.41,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        16.6,
+        16.3,
+        16.1,
+        16.1,
+        17.3,
+        17.5,
+        17.0
+      ]
+    },
+    {
+      "symbol": "ADVENT",
+      "price": 13.5,
+      "today_pct": -2.17,
+      "seven_d_pct": 3.85,
+      "dates": [
+        "29-Oct",
+        "01-Nov",
+        "02-Nov",
+        "03-Nov",
+        "04-Nov",
+        "05-Nov",
+        "08-Nov"
+      ],
+      "prices": [
+        13.0,
+        13.2,
+        13.2,
+        13.0,
+        13.3,
+        13.8,
+        13.5
       ]
     }
   ]
