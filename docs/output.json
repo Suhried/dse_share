@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-26T13:54:58Z",
-  "generated_at_bd": "26 Nov 2026, 07:54 PM",
+  "generated_at": "2026-11-26T14:45:56Z",
+  "generated_at_bd": "26 Nov 2026, 08:45 PM",
   "portfolio": {
     "stocks": [
       {
@@ -710,6 +710,30 @@
         1.8,
         1.8,
         1.7
+      ]
+    },
+    {
+      "symbol": "PHOENIXFIN",
+      "price": 3.4,
+      "today_pct": -2.86,
+      "seven_d_pct": -5.56,
+      "dates": [
+        "18-Nov",
+        "19-Nov",
+        "22-Nov",
+        "23-Nov",
+        "24-Nov",
+        "25-Nov",
+        "26-Nov"
+      ],
+      "prices": [
+        3.6,
+        3.5,
+        3.4,
+        3.4,
+        3.5,
+        3.5,
+        3.4
       ]
     },
     {
